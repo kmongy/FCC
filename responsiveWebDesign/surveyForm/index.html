@@ -1,16 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Survey Form</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Pho Survey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   </head>
 
   <body>
     <section>
-      <h1>Survey Form</h1>
+      <h1>The Best Pho Survey</h1>
+      <p id="description">I need your help in describing what makes the best bowl of pho!</p>
+
+      <form id="survey-form" action="#" method="POST">
+        <div class="survey-contact-name">
+          <label id="name-label" for="name">Name: </label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Please enter you name"
+            required
+          />
+        </div>
+
+        <div class="survey-contact-email">
+          <label id="email-label" for="email">Email: </label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="you@email.com"
+            required
+          />
+        </div>
+
+        <div class="survey-contact-number">
+          <label id="number-label" for="name">Age: </label>
+          <input
+            id="number"
+            type="number"
+            name="number"
+            min="0"
+            max="100"
+            placeholder="Age"
+            required
+          />
+        </div>
+
+        <div class="survey-bowl-size-dropdown">
+          <label for="dropdown" name="bowl-size">Size of your pho bowl: </label>
+          <select id="dropdown">
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+            <option>Extra Large</option>
+            <option>JUMBO</option>
+          </select>
+        </div>
+
+        <div class="survey-soup-radio">
+          <form>
+            <p>Soup Base</p>
+            <input id="soup-beef" type="radio" name="soup-base" value="beef" />
+            <label for="soup-beef"> Beef</label>
+            <input id="soup-chicken" type="radio" name="soup-base" value="chicken" />
+            <label for="soup-chicken"> Chicken</label>
+            <input id="soup-other" type="radio" name="soup-base" value="other" />
+            <label for="soup-other"> Other</label>
+          </form>
+        </div>
+
+        <div class="survey-meat-radio">
+          <form>
+            <p>Choice of meat:</p>
+            <input id="pork" type="radio" name="meat" value="pork" />
+            <label for="pork"> Pork</label>
+            <input id="chicken" type="radio" name="meat" value="chicken" />
+            <lable for="chicken"> Chicken</lable>
+            <input id="steak" type="radio" name="meat" value="steak" />
+            <lable for="steak"> Steak</lable>
+            <input id="vegan" type="radio" name="meat" value="vegan" />
+            <label for="vegan"> Vegan</label>
+          </form>
+        </div>
+
+        <div class="survey-garnish-checkbox">
+          <p>Choice of garnish/toppings: </p>
+          <input id="basil" type="checkbox" name="spices" value="basil" />
+          <label for="basil"> Basil</label>
+          <input id="beansprouts" type="checkbox" name="spices" value="beansprouts" />
+          <label for="beansprouts"> Bean Sprouts</label>
+          <input id="onions" type="checkbox" name="spices" value="onions" />
+          <label for="onions"> Onions</label>
+          <input id="green-onions" type="checkbox" name="spices" value="green-onions" />
+          <label for="green-onions"> Green Onions</label>
+          <input id="lime" type="checkbox" name="spices" value="lime" />
+          <label for="lime"> Lime</label>
+          <input id="cilantro" type="checkbox" name="spices" value="cilantro" />
+          <label for="cilantro"> Cilantro</label>
+        </div>
+
+        <div class="survey-garnish-checkbox">
+          <p>Choice of sauces and additional spices: </p>
+          <input id="hoisin" type="checkbox" name="sauces" value="housin" />
+          <label for="basil"> Housin Sauce</label>
+          <input id="sriracha" type="checkbox" name="sauces" value="sriracha" />
+          <label for="sriracha"> Sriracha Sauce</label>
+          <input id="fish-sauce" type="checkbox" name="sauces" value="fish-sauce" />
+          <label for="fish-sauce"> Fish Sauce</label>
+          <input id="sugar" type="checkbox" name="sauces" value="sugar" />
+          <label for="sugar"> Sugar</label>
+          <input id="black-pepper" type="checkbox" name="sauces" value="black-pepper" />
+          <label for="black-pepper"> Black Pepper</label>
+        </div>
+
+        <div class="survey-comments">
+          <p>Anything else that needs to be in your perfect bowl of pho? Comment below: </p>
+          <input type="text">
+        </div>
+
+        <button id="submit" type="submit" value="Submit">Submit</button>
+
+      </form>
     </section>
   </body>
 </html>
