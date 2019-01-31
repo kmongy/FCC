@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Pho Survey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Chivo:400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   </head>
 
   <body>
-    <section>
-      <h1>The Best Pho Survey</h1>
-      <p id="description">I need your help in describing what makes the best bowl of pho!</p>
+    <section class="survey-container">
+      <div class="survey-heading">
+        <h1>The Best Pho Survey</h1>
+        <p id="description">I need your help in describing the best bowl of pho!</p>
+      </div>
 
       <form id="survey-form" action="#" method="POST">
         <div class="survey-contact-name">
@@ -61,29 +64,29 @@
         </div>
 
         <div class="survey-soup-radio">
-          <form>
+          <div class="survey-description-heading">
             <p>Soup Base</p>
+          </div>
+          <div class="split">
             <input id="soup-beef" type="radio" name="soup-base" value="beef" />
             <label for="soup-beef"> Beef</label>
             <input id="soup-chicken" type="radio" name="soup-base" value="chicken" />
             <label for="soup-chicken"> Chicken</label>
             <input id="soup-other" type="radio" name="soup-base" value="other" />
             <label for="soup-other"> Other</label>
-          </form>
+          </div>
         </div>
 
         <div class="survey-meat-radio">
-          <form>
-            <p>Choice of meat:</p>
-            <input id="pork" type="radio" name="meat" value="pork" />
-            <label for="pork"> Pork</label>
-            <input id="chicken" type="radio" name="meat" value="chicken" />
-            <lable for="chicken"> Chicken</lable>
-            <input id="steak" type="radio" name="meat" value="steak" />
-            <lable for="steak"> Steak</lable>
-            <input id="vegan" type="radio" name="meat" value="vegan" />
-            <label for="vegan"> Vegan</label>
-          </form>
+          <p>Choice of meat:</p>
+          <input id="pork" type="radio" name="meat" value="pork" />
+          <label for="pork"> Pork</label>
+          <input id="chicken" type="radio" name="meat" value="chicken" />
+          <lable for="chicken"> Chicken</lable>
+          <input id="steak" type="radio" name="meat" value="steak" />
+          <lable for="steak"> Steak</lable>
+          <input id="vegan" type="radio" name="meat" value="vegan" />
+          <label for="vegan"> Vegan</label>
         </div>
 
         <div class="survey-garnish-checkbox">

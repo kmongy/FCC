@@ -1,0 +1,68 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Chivo", sans-serif;
+  font-size: 1.2em;
+}
+.survey-container {
+  background-color: linen;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 700px;
+  margin: 40px auto;
+}
+#survey-form {
+  border: 3px solid rgba(0,0,0,0.1);
+  border-radius: 5px;
+  margin: .5em;
+  padding: .5em;
+}
+.survey-heading {
+  text-align: center;
+}
+h1 {
+  font-size: 2em;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+#description {
+  margin-bottom: 2em;
+}
+.survey-contact-name,
+.survey-contact-email,
+.survey-contact-number {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+  margin: 0 auto;
+}
+.survey-contact-name input,
+.survey-contact-email input,
+.survey-contact-number input {
+  height: 30px;
+  width: 200px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.survey-bowl-size-dropdown {
+  text-align: center;
+  padding: 20px 0;
+}
+#dropdown {
+  font-size: 14px;
+  margin-left: 2em;
+}
+.survey-soup-radio {
+  background-color: coral;
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin: 0 auto;
+}
