@@ -8,7 +8,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Chivo", sans-serif;
-  font-size: 1.2em;
+  font-size: 1.3em;
+  color: #426a5a;
 }
 ul,
 li {
@@ -16,18 +17,12 @@ li {
   padding: 0;
 }
 .survey-container {
-  background-color: linen;
+  background-color: #91c997;
   display: flex;
   align-items: center;
   flex-direction: column;
   max-width: 700px;
   margin: 40px auto;
-}
-#survey-form {
-  border: 3px solid rgba(0,0,0,0.1);
-  border-radius: 5px;
-  margin: .5em;
-  padding: .5em;
 }
 .survey-heading {
   text-align: center;
@@ -36,6 +31,12 @@ h1 {
   font-size: 2em;
   margin-bottom: 0;
   text-transform: uppercase;
+}
+#survey-form {
+  border: 3px solid rgba(0,0,0,0.1);
+  border-radius: 5px;
+  margin: .5em;
+  padding: .5em;
 }
 #description {
   margin-bottom: 2em;
@@ -66,9 +67,21 @@ h1 {
 }
 .survey-box {
   display: flex;
-  justify-content: space-around;
   width: 85%;
   margin: 0 auto;
+}
+.survey-box-first {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  text-align: right;
+  margin-right: 2em;
+}
+.survey-box-second {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin-left: 3em;
 }
 .survey-comments {
   text-align: center;
@@ -76,6 +89,7 @@ h1 {
 .survey-comments textarea {
   height: 200px;
   width: 80%;
+  font-size: 14px;
 }
 #submit {
   border-radius: 12px;
@@ -86,4 +100,7 @@ h1 {
   font-size: 16px;
   font-weight: 700;
   margin: 1.5em auto;
+}
+#submit:hover {
+  background-color: red;
 }

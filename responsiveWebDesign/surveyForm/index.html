@@ -5,15 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Pho Survey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://fonts.googleapis.com/css?family=Chivo:400,700" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Chivo:400,700"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   </head>
 
   <body>
     <section class="survey-container">
       <div class="survey-heading">
-        <h1>The Best Pho Survey</h1>
-        <p id="description">I need your help in describing the best bowl of pho!</p>
+        <h1 id="title">The Best Pho Survey</h1>
+        <p id="description">
+          I need your help in describing the best bowl of pho!
+        </p>
       </div>
 
       <form id="survey-form" action="#" method="POST">
@@ -63,112 +68,174 @@
           </select>
         </div>
 
-        <div class="survey-box survey-soup-radio">
-          <div class="survey-description-heading">
+        <div class="survey-box">
+          <div class="survey-box-first survey-description-heading">
             <p>Soup Base:</p>
           </div>
-          <ul>
-            <li>
-              <input id="soup-beef" type="radio" name="soup-base" value="beef" />
-              <label for="soup-beef"> Beef</label>
-            </li>
-            <li>
-              <input id="soup-chicken" type="radio" name="soup-base" value="chicken" />
-              <label for="soup-chicken"> Chicken</label>
-            </li>
-            <li>
-              <input id="soup-other" type="radio" name="soup-base" value="other" />
-              <label for="soup-other"> Other</label>
-            </li>
-          </ul>
+          <div class="survey-box-second">
+            <ul>
+              <li>
+                <input
+                  id="soup-beef"
+                  type="radio"
+                  name="soup-base"
+                  value="beef"
+                />
+                <label for="soup-beef"> Beef</label>
+              </li>
+              <li>
+                <input
+                  id="soup-chicken"
+                  type="radio"
+                  name="soup-base"
+                  value="chicken"
+                />
+                <label for="soup-chicken"> Chicken</label>
+              </li>
+              <li>
+                <input
+                  id="soup-other"
+                  type="radio"
+                  name="soup-base"
+                  value="other"
+                />
+                <label for="soup-other"> Other</label>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="survey-box survey-meat-radio">
-          <p>Choice of meat:</p>
-          <ul>
-            <li>
-              <input id="pork" type="radio" name="meat" value="pork" />
-              <label for="pork"> Pork</label>
-            </li>
-            <li>
-              <input id="chicken" type="radio" name="meat" value="chicken" />
-              <lable for="chicken"> Chicken</lable>
-            </li>
-            <li>
-              <input id="steak" type="radio" name="meat" value="steak" />
-              <lable for="steak"> Steak</lable>
-            </li>
-            <li>
-              <input id="vegan" type="radio" name="meat" value="vegan" />
-              <label for="vegan"> Vegan</label>
-            </li>
-          </ul>
+        <div class="survey-box"> 
+          <div class="survey-box-first survey-description-heading">
+            <p>Choice of meat:</p>
+          </div>
+          <div class="survey-box-second">
+            <ul>
+              <li>
+                <input id="pork" type="radio" name="meat" value="pork" />
+                <label for="pork"> Pork</label>
+              </li>
+              <li>
+                <input id="chicken" type="radio" name="meat" value="chicken" />
+                <lable for="chicken"> Chicken</lable>
+              </li>
+              <li>
+                <input id="steak" type="radio" name="meat" value="steak" />
+                <lable for="steak"> Steak</lable>
+              </li>
+              <li>
+                <input id="vegan" type="radio" name="meat" value="vegan" />
+                <label for="vegan"> Vegan</label>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="survey-box survey-garnish-checkbox">
-          <p>Choice of garnish/toppings: </p>
-          <ul>
-            <li>
-              <input id="basil" type="checkbox" name="spices" value="basil" />
-              <label for="basil"> Basil</label>
-            </li>
-            <li>
-              <input id="beansprouts" type="checkbox" name="spices" value="beansprouts" />
-              <label for="beansprouts"> Bean Sprouts</label>
-            </li>
-            <li>
-              <input id="onions" type="checkbox" name="spices" value="onions" />
-              <label for="onions"> Onions</label>
-            </li>
-            <li>
-              <input id="green-onions" type="checkbox" name="spices" value="green-onions" />
-              <label for="green-onions"> Green Onions</label>
-            </li>
-            <li>
-              <input id="lime" type="checkbox" name="spices" value="lime" />
-              <label for="lime"> Lime</label>
-            </li>
-            <li>
-              <input id="cilantro" type="checkbox" name="spices" value="cilantro" />
-              <label for="cilantro"> Cilantro</label>
-            </li>
-          </ul>
+        <div class="survey-box">
+          <div class="survey-box-first survey-description-heading">
+            <p>Choice of garnish:</p>
+          </div>
+          <div class="survey-box-second">
+            <ul>
+              <li>
+                <input id="basil" type="checkbox" name="spices" value="basil" />
+                <label for="basil"> Basil</label>
+              </li>
+              <li>
+                <input
+                  id="beansprouts"
+                  type="checkbox"
+                  name="spices"
+                  value="beansprouts"
+                />
+                <label for="beansprouts"> Bean Sprouts</label>
+              </li>
+              <li>
+                <input id="onions" type="checkbox" name="spices" value="onions" />
+                <label for="onions"> Onions</label>
+              </li>
+              <li>
+                <input
+                  id="green-onions"
+                  type="checkbox"
+                  name="spices"
+                  value="green-onions"
+                />
+                <label for="green-onions"> Green Onions</label>
+              </li>
+              <li>
+                <input id="lime" type="checkbox" name="spices" value="lime" />
+                <label for="lime"> Lime</label>
+              </li>
+              <li>
+                <input
+                  id="cilantro"
+                  type="checkbox"
+                  name="spices"
+                  value="cilantro"
+                />
+                <label for="cilantro"> Cilantro</label>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="survey-box survey-garnish-checkbox">
-          <p>Choice of sauces and additional spices: </p>
-          <ul>
-            <li>
-              <input id="hoisin" type="checkbox" name="sauces" value="housin" />
-              <label for="basil"> Housin Sauce</label>
-            </li>
-            <li>
-              <input id="sriracha" type="checkbox" name="sauces" value="sriracha" />
-              <label for="sriracha"> Sriracha Sauce</label>
-            </li>
-            <li>
-              <input id="fish-sauce" type="checkbox" name="sauces" value="fish-sauce" />
-              <label for="fish-sauce"> Fish Sauce</label>
-            </li>
-            <li>
-              <input id="sugar" type="checkbox" name="sauces" value="sugar" />
-              <label for="sugar"> Sugar</label>
-            </li>
-            <li>
-              <input id="black-pepper" type="checkbox" name="sauces" value="black-pepper" />
-              <label for="black-pepper"> Black Pepper</label>
-            </li>
-          </ul>
+        <div class="survey-box">
+          <div class="survey-box-first survey-description-heading">
+            <p>Choice of sauces and additional spices:</p>
+          </div>
+          <div class="survey-box-second">
+            <ul>
+              <li>
+                <input id="hoisin" type="checkbox" name="sauces" value="housin" />
+                <label for="basil"> Housin Sauce</label>
+              </li>
+              <li>
+                <input
+                  id="sriracha"
+                  type="checkbox"
+                  name="sauces"
+                  value="sriracha"
+                />
+                <label for="sriracha"> Sriracha Sauce</label>
+              </li>
+              <li>
+                <input
+                  id="fish-sauce"
+                  type="checkbox"
+                  name="sauces"
+                  value="fish-sauce"
+                />
+                <label for="fish-sauce"> Fish Sauce</label>
+              </li>
+              <li>
+                <input id="sugar" type="checkbox" name="sauces" value="sugar" />
+                <label for="sugar"> Sugar</label>
+              </li>
+              <li>
+                <input
+                  id="black-pepper"
+                  type="checkbox"
+                  name="sauces"
+                  value="black-pepper"
+                />
+                <label for="black-pepper"> Black Pepper</label>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div class="survey-comments">
-          <p>Anything else that needs to be in your perfect bowl of pho? Comment below: </p>
+          <p>
+            Anything else that needs to be in your perfect bowl of pho? Comment
+            below:
+          </p>
           <textarea name="comments">Enter you comments here!</textarea>
         </div>
 
         <button id="submit" type="submit" value="Submit">Submit</button>
-
       </form>
     </section>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   </body>
 </html>
