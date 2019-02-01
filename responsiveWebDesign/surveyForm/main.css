@@ -10,6 +10,11 @@ body {
   font-family: "Chivo", sans-serif;
   font-size: 1.2em;
 }
+ul,
+li {
+  list-style: none;
+  padding: 0;
+}
 .survey-container {
   background-color: linen;
   display: flex;
@@ -59,10 +64,26 @@ h1 {
   font-size: 14px;
   margin-left: 2em;
 }
-.survey-soup-radio {
-  background-color: coral;
+.survey-box {
   display: flex;
-  justify-content: space-between;
-  width: 300px;
+  justify-content: space-around;
+  width: 85%;
   margin: 0 auto;
+}
+.survey-comments {
+  text-align: center;
+}
+.survey-comments textarea {
+  height: 200px;
+  width: 80%;
+}
+#submit {
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  height: 4em;
+  width: 30%;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 1.5em auto;
 }
