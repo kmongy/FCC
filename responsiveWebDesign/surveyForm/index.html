@@ -15,7 +15,7 @@
   <body>
     <section class="survey-container">
       <div class="survey-heading">
-        <h1 id="title">The Best Pho Survey</h1>
+        <h1 id="title">The <span id="word-transform">Best</span> Pho Survey</h1>
         <p id="description">
           I need your help in describing the best bowl of pho!
         </p>
@@ -117,11 +117,11 @@
               </li>
               <li>
                 <input id="chicken" type="radio" name="meat" value="chicken" />
-                <lable for="chicken"> Chicken</lable>
+                <label for="chicken"> Chicken</label>
               </li>
               <li>
                 <input id="steak" type="radio" name="meat" value="steak" />
-                <lable for="steak"> Steak</lable>
+                <label for="steak"> Steak</label>
               </li>
               <li>
                 <input id="vegan" type="radio" name="meat" value="vegan" />
@@ -188,7 +188,7 @@
             <ul>
               <li>
                 <input id="hoisin" type="checkbox" name="sauces" value="housin" />
-                <label for="basil"> Housin Sauce</label>
+                <label for="hoisin"> Housin Sauce</label>
               </li>
               <li>
                 <input
@@ -230,7 +230,7 @@
             Anything else that needs to be in your perfect bowl of pho? Comment
             below:
           </p>
-          <textarea name="comments">Enter you comments here!</textarea>
+          <textarea name="comments" placeholder="Enter your comments here!"></textarea>
         </div>
 
         <button id="submit" type="submit" value="Submit">Submit</button>
