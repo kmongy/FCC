@@ -2,7 +2,7 @@
 
 -------
 
-Here is my tribute page to Hideo Kojima to fufill the Free Code Camp Responsive Design curriculum. This was made with pure HTML and CSS. No Javascript.
+Here is my tribute page to Jimmy Page to fufill the Free Code Camp Responsive Design curriculum. This was made with pure HTML and CSS. No Javascript.
 
 ## FCC Requirements
 
