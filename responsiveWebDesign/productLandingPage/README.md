@@ -1,5 +1,9 @@
 # FCC Requirements for Product Landing Page
 
+Fred's Guitar Shop!
+
+I got my layout inspiration from [This page](https://creativetacos.com/free-product-landing-page-website-psd/).
+
 - [ ] User Story #1: My product landing page should have a header element with a corresponding id="header".
 
 - [ ] User Story #2: I can see an image within the header element with a corresponding id="header-img". A company logo would make a good image here.
@@ -22,7 +26,7 @@
 
 - [ ] User Story #11: Within the form, there is a submit input with a corresponding id="submit".
 
-- [ ] User Story #12: When I click the #submit element, the email is submitted to a static page (use this mock URL: https://www.freecodecamp.com/email-submit) that confirms the email address was entered and that it posted successfully.
+- [ ] User Story #12: When I click the #submit element, the email is submitted to a static page (use this mock URL: <https://www.freecodecamp.com/email-submit>) that confirms the email address was entered and that it posted successfully.
 
 - [ ] User Story #13: The navbar should always be at the top of the viewport.
 
