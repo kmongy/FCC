@@ -1,3 +1,5 @@
 # My FCC Project Space
 
-Housing my FCC projects here. Using vanilla everything for each project. Planning on coming back after the projects are finished to enhance them!
+Pushing my FCC projects here. Using vanilla everything for each project. Planning on coming back after the projects are finished to enhance them!
+
+See the [Code Pen projects](https://codepen.io/kmongy/).
