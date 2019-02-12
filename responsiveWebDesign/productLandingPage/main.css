@@ -44,3 +44,32 @@ li {
 #nav-bar a:hover {
   text-decoration: underline;
 }
+#hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 75vh;
+  margin-bottom: 4em;
+}
+#hero .hero-name-container {
+  display: grid;
+  justify-content: center;
+  align-items: end;
+  height: 100%;
+}
+#hero h1 {
+  font-size: 4.5em;
+  font-weight: 800;
+}
+#hero p {
+  align-self: start;
+  font-size: 1.2em;
+}
+.hero-img-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#hero-img {
+  width: 100%;
+}
