@@ -79,6 +79,7 @@ body {
   display: grid;
   grid-template-rows: 1fr 100px 1fr;
   align-items: center;
+  justify-content: end;
   padding: 2em;
 }
 #hero h1 {
