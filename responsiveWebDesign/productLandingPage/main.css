@@ -17,6 +17,11 @@ li {
 body {
   background: linear-gradient(120deg, #FFD700, #fb7a22);
 }
+h2 {
+  text-align: center;
+  margin: 2em;
+  padding: 1em;
+}
 .header-top {
  display: flex;
  justify-content: space-between;
@@ -122,4 +127,13 @@ body {
 }
 #hero-img {
   width: 100%;
+}
+#featured-guitars-container .featured {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 400px;
+}
+.featured img {
+  height: 400px;
+  
 }
