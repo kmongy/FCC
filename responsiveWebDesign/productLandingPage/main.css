@@ -29,7 +29,7 @@ body {
 #header-logo a{
   text-decoration: none;
   color: #000;
-  margin: 1em;
+  margin: 1em 1em 1em 2em;
   font-size: 1.4em;
   text-transform: uppercase;
   font-weight: 900;
@@ -40,7 +40,7 @@ body {
   box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
   background: #fff;
   padding: 1em;
-  margin: 1em;
+  margin: 1em 2.5em 1em 1em;
   font-weight: 900;
   text-align: center;
   text-transform: uppercase;
@@ -54,11 +54,11 @@ body {
 #nav-bar ul {
   display: flex;
   width: 55%;
+  margin: 2.7em;
 }
 #nav-bar li {
   display: flex;
   justify-content: space-between;
-  margin: 1.23em;
   width: 100%;
 }
 #nav-bar a {
@@ -77,8 +77,9 @@ body {
 }
 #hero .hero-name-container {
   display: grid;
-  justify-content: center;
-  height: 100%;
+  grid-template-rows: 3 / 1fr;
+  align-items: center;
+  padding: 2em;
 }
 #hero h1 {
   font-size: 5em;
@@ -90,26 +91,27 @@ body {
   align-self: start;
   font-size: 1.2em;
 }
-#hero .hero-button button {
+#hero button {
+  align-self: start;
   border: 1px solid grey;
   border-radius: 28px;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
   background: #fff;
-  padding: 1em;
-  margin: 1em;
+  padding: .5em;
   text-align: center;
   text-transform: uppercase;
+  font-size: .9em;
   font-weight: 900;
   width: 20em;
+  height: 6em;
   cursor: pointer;
-  align-self: flex-start;
-  justify-content: center;
 }
 .hero-img-container {
   display: grid;
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 1.2em;
 }
 #hero-img {
   width: 100%;
