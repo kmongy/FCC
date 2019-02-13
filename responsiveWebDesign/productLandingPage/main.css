@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,900');
 html {
   box-sizing: border-box;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -14,11 +14,14 @@ li {
   padding: 0;
   margin: 0;
 }
+body {
+  background: linear-gradient(120deg, #FFD700, #fb7a22);
+}
 .header-top {
  display: flex;
  justify-content: space-between;
  align-items: center;
- border-bottom: 1px solid lightgrey;
+ border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 #header-logo {
   height: 100%;
@@ -29,21 +32,20 @@ li {
   margin: 1em;
   font-size: 1.4em;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 900;
 }
 #header-cart button {
   border: 1px solid grey;
   border-radius: 28px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
   background: #fff;
   padding: 1em;
   margin: 1em;
-  font-weight: 800;
+  font-weight: 900;
   text-align: center;
   text-transform: uppercase;
   width: 8.5em;
-}
-#header-cart button:hover {
-  background: yellow;
+  cursor: pointer;
 }
 #nav-bar {
   display: flex;
@@ -76,17 +78,32 @@ li {
 #hero .hero-name-container {
   display: grid;
   justify-content: center;
-  align-items: end;
   height: 100%;
 }
 #hero h1 {
   font-size: 5em;
   font-weight: 800;
   text-transform: uppercase;
+  align-self: end;
 }
 #hero p {
   align-self: start;
   font-size: 1.2em;
+}
+#hero .hero-button button {
+  border: 1px solid grey;
+  border-radius: 28px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  background: #fff;
+  padding: 1em;
+  margin: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  width: 20em;
+  cursor: pointer;
+  align-self: flex-start;
+  justify-content: center;
 }
 .hero-img-container {
   display: grid;
