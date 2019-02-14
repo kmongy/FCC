@@ -23,9 +23,6 @@ h2 {
   padding: 1em;
   font-size: 3em;
 }
-#header {
-  position: fixed;
-}
 .header-top {
  display: flex;
  justify-content: space-between;
