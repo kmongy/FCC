@@ -21,6 +21,7 @@ h2 {
   text-align: center;
   margin: 2em;
   padding: 1em;
+  font-size: 3em;
 }
 .header-top {
  display: flex;
@@ -128,12 +129,21 @@ h2 {
 #hero-img {
   width: 100%;
 }
-#featured-guitars-container .featured {
+.featured-container .featured {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 400px;
+  justify-content: center;
 }
-.featured img {
-  height: 400px;
+.featured-img {
+  height: 500px;
   
+  text-align: center;
+}
+.featured-img img {
+  height: 100%;
+  padding: .5em;
+}
+#featured-gear .featured-img img {
+  width: 100%;
+  height: auto;
 }
