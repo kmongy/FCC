@@ -136,7 +136,6 @@ h2 {
 }
 .featured-img {
   height: 500px;
-  
   text-align: center;
 }
 .featured-img img {
@@ -146,4 +145,17 @@ h2 {
 #featured-gear .featured-img img {
   width: 100%;
   height: auto;
+}
+.video-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.video-container h2 {
+  margin-bottom: 0;
+}
+.video-container p {
+  font-size: 1.3em;
+  margin-bottom: .5em;
 }
