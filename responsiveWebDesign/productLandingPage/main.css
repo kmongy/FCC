@@ -199,3 +199,8 @@ h2 {
   background-color: #fb7a22;
   color: white;
 }
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 1.5em;
+}
