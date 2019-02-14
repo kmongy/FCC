@@ -23,6 +23,9 @@ h2 {
   padding: 1em;
   font-size: 3em;
 }
+#header {
+  position: fixed;
+}
 .header-top {
  display: flex;
  justify-content: space-between;
@@ -203,4 +206,9 @@ h2 {
   display: flex;
   justify-content: space-around;
   margin: 1.5em;
+}
+@media (max-width: 1450px) {
+  #hero h1 {
+    font-size: 4em;
+  }
 }
