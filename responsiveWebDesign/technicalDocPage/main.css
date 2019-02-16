@@ -56,3 +56,8 @@ code pre {
   background-color: rgb(235, 233, 233);
   padding: 1em;
 }
+#Reference a {
+  text-decoration: underline;
+}
+#Reference a:hover {
+  background-color: goldenrod;
