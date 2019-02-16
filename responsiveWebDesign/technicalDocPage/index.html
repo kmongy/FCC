@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Javascript Documentation</title>
+    <title>Javascript Basics Documentation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
   </head>
@@ -11,78 +11,392 @@
   <body>
     <header>
       <nav id="navbar">
-        <header>Documentation</header>
+        <header>Javascript Basics</header>
+        <ul>
+          <li><a href=#Introduction>Introduction</a></li>
+          <li><a href=#Thinking_Like_a_Programmer>Thinking Like a Programmer</a></li>
+          <li><a href=#Troubleshooting_Javascript>Troubleshooting Javascript</a></li>
+          <li><a href=#Variables>Variables</a></li>
+          <li><a href=#Basic_Math>Basic Math</a></li>
+          <li><a href=#Strings>Strings</a></li>
+          <li><a href=#String_Methods>String Methods</a></li>
+          <li><a href=#Arrays>Arrays</a></li>
+          <li><a href=#Conditionals>Conditionals</a></li>
+          <li><a href=#Loop>Loop</a></li>
+        </ul>
       </nav>
     </header>
     <main id="main-doc">
       <section id="Introduction" class="main-section">
         <header>Introduction</header>
-        <p>Hello World! Welcome.</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad vero provident mollitia illo, nemo fuga qui deleniti laborum vel quos voluptatibus aliquam ducimus possimus fugit repellat, ipsam, eligendi voluptas ab? Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consectetur quidem blanditiis fugit totam quae, accusantium, maiores, sint earum minus unde. Quasi quisquam commodi natus aut praesentium error iste possimus.</p>
+        <article>
+          <h2>What is Javascript?</h2>
+          <p>JavaScript is a scripting or programming language that allows you to implement complex things on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. It is the third layer of the layer cake of standard web technologies, two of which (HTML and CSS) we have covered in much more detail in other parts of the Learning Area.</p>
+          <ul>
+            <li>HTML is the markup language that we use to structure and give meaning to our web content, for example defining paragraphs, headings, and data tables, or embedding images and videos in the page.</li>
+            <li>CSS is a language of style rules that we use to apply styling to our HTML content, for example setting background colors and fonts, and laying out our content in multiple columns.</li>
+            <li>JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else. (Okay, not everything, but it is amazing what you can achieve with a few lines of JavaScript code.)</li>
+          </ul>
+          <p>The three layers build on top of one another nicely. Let's take a simple text label as an example. We can mark it up using HTML to give it structure and purpose:</p>
+          <code><pre>
+            &lt;p&gt;Player 1: Chris&lt;/p&gt
+          </pre></code>
+          <p>Then we can add some CSS into the mix to get it looking nice:</p>
+          <code><pre>
+            p {
+            font-family: 'helvetica neue', helvetica, sans-serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-align: center;
+            border: 2px solid rgba(0,0,200,0.6);
+            background: rgba(0,0,200,0.3);
+            color: rgba(0,0,200,0.6);
+            box-shadow: 1px 1px 2px rgba(0,0,200,0.4);
+            border-radius: 10px;
+            padding: 3px 10px;
+            display: inline-block;
+            cursor: pointer;
+          }</pre></code>
+          <p>And finally, we can add some JavaScript to implement dynamic behaviour:</p>
+          <code><pre>
+            const para = document.querySelector('p');
+
+            para.addEventListener('click', updateName);
+            
+            function updateName() {
+              let name = prompt('Enter a new name');
+              para.textContent = 'Player 1: ' + name;
+            }</pre></code>
+        </article>
       </section>
-      <section class="main-section">
-        <header>
-          <article>
-            <p></p>
-          </article>
-        </header>
+
+      <section id="Thinking_Like_a_Programmer" class="main-section">
+        <header>Thinking Like a Programmer</header>
+        <article>
+          <p>One of the hardest things to learn in programming is not the syntax you need to learn, but how to apply it to solve real world problems. You need to start thinking like a programmer — this generally involves looking at descriptions of what your program needs to do,  working out what code features are needed to achieve those things, and how to make them work together.</p>
+          <p>This requires a mixture of hard work, experience with the programming syntax, and practice — plus a bit of creativity. The more you code, the better you'll get at it. We can't promise that you'll develop "programmer brain" in five minutes, but we will give you plenty of opportunity to practice thinking like a programmer throughout the course.</p>
+          <p>With that in mind, let's look at the example we'll be building up in this article, and review the general process of dissecting it into tangible tasks.</p>
+          <p>Let's imagine your boss has given you the following brief for creating this game:</p>
+          <blockquote>I want you to create a simple guess the number type game. It should choose a random number between 1 and 100, then challenge the player to guess the number in 10 turns. After each turn the player should be told if they are right or wrong — and, if they are wrong, whether the guess was too low or too high. It should also tell the player what numbers they previously guessed. The game will end once the player guesses correctly, or once they run out of turns. When the game ends, the player should be given an option to start playing again.</blockquote>
+          <p>Upon looking at this brief, the first thing we can do is to start breaking it down into simple actionable tasks, in as much of a programmer mindset as possible:</p>
+          <ol>
+            <li>Generate a random number between 1 and 100.</li>
+            <li>Record the turn number the player is on. Start it on 1.</li>
+            <li>Provide the player with a way to guess what the number is.</li>
+            <li>Once a guess has been submitted first record it somewhere so the user can see their previous guesses.</li>
+            <li>Next, check whether it is the correct number.</li>
+            <li>If it is correct:
+              <ol>
+                <li>Display congratulations message.</li>
+                <li>Stop the player from being able to enter more guesses (this would mess the game up).</li>
+                <li>Display control allowing the player to restart the game.</li>
+              </ol>
+            </li>
+            <li>If it is wrong and the player has turns left:
+              <ol>
+                <li>Tell the player they are wrong.</li>
+                <li>Allow them to enter another guess.</li>
+                <li>Increment the turn number by 1.</li>
+              </ol>
+            </li>
+            <li>If it is wrong and the player has no turns left:
+              <ol>
+                <li>Tell the player it is game over.</li>
+                <li>Stop the player from being able to enter more guesses (this would mess the game up).</li>
+                <li>Display control allowing the player to restart the game.</li>
+              </ol>
+            </li>
+            <li>Once the game restarts, make sure the game logic and UI are completely reset, then go back to step 1.</li>
+          </ol>
+          <p>Let's now move forward, looking at how we can turn these steps into code, building up the example, and exploring JavaScript features as we go.</p>
+        </article>
       </section>
-      <section class="main-section">
-        <header>
-          <article>
-            <p></p>
-          </article>
-        </header>
+
+      <section id="Troubleshooting_Javascript" class="main-section">
+        <header>Troubleshooting Javascript</header>
+        <article>
+          <h2>Types of Errors</h2>
+          <p>Generally speaking, when you do something wrong in code, there are two main types of error that you'll come across:</p>
+          <ul>
+            <li>Syntax errors: These are spelling errors in your code that actually cause the program not to run at all, or stop working part way through — you will usually be provided with some error messages too. These are usually okay to fix, as long as you are familiar with the right tools and know what the error messages mean!</li>
+            <li>Logic errors: These are errors where the syntax is actually correct but the code is not what you intended it to be, meaning that program runs successfully but gives incorrect results. These are often harder to fix than syntax errors, as there usually isn't a resulting error message to direct you to the source of the error.</li>
+          </ul>
+          <p>Okay, so it's not quite that simple — there are some other differentiators as you drill down deeper. But the above classifications will do at this early stage in your career. We'll look at both of these types going forward.</p>
+          <hr>
+          <p>Earlier on in the course we got you to type some simple JavaScript commands into the developer tools JavaScript console (if you can't remember how to open this in your browser, follow the previous link to find out how). What's even more useful is that the console gives you error messages whenever a syntax error exists inside the JavaScript being fed into the browser's JavaScript engine. Now let's go hunting.</p>
+          <ol>
+            <li>Go to the tab that you've got number-game-errors.html open in, and open your JavaScript console. You should see an error message along the following lines:
+              <p><img src="https://mdn.mozillademos.org/files/13496/not-a-function.png"></p>
+            </li>
+            <li>This is a pretty easy error to track down, and the browser gives you several useful bits of information to help you out (the screenshot above is from Firefox, but other browsers provide similar information). From left to right, we've got:
+              <ul>
+                <li>A red "x" to indicate that this is an error.</li>
+                <li>An error message to indicate what's gone wrong: "TypeError: guessSubmit.addeventListener is not a function"</li>
+                <li>A "Learn More" link that links through to an MDN page that explains what this error means in huge amounts of detail.</li>
+                <li>The name of the JavaScript file, which links through to the Debugger tab of the devtools. If you follow this link, you'll see the exact line where the error is highlighted.</li>
+                <li>The line number where the error is, and the character number in that line where the error is first seen. In this case, we've got line 86, character number 3.</li>
+              </ul>
+            </li>
+            <li>If we look at line 86 in our code editor, we'll find this line:
+              <code><pre>
+                guessSubmit.addeventListener('click', checkGuess);
+              </pre></code>
+            </li>
+            <li>The error message says "guessSubmit.addeventListener is not a function", so we've probably spelled something wrong. If you are not sure of the correct spelling of a piece of syntax, it is often good to look up the feature on MDN. The best way to do this currently is to search for "mdn name-of-feature" on your favourite search engine. Here's a shortcut to save you some time in this instance: addEventListener().</li>
+            <li>So, looking at this page, the error appears to be that we've spelled the function name wrong! Remember that JavaScript is case sensitive, so any slight difference in spelling or casing will cause an error. Changing addeventListener to addEventListener should fix this. Do this now.</li>
+          </ol>
+        </article>
       </section>
-      <section class="main-section">
-        <header>
-          <article>
-            <p></p>
-          </article>
-        </header>
+
+      <section id="Variables" class="main-section">
+        <header>Variables</header>
+        <article>
+          <h2>What is a Variable?</h2>
+          <p>A variable is a container for a value, like a number we might use in a sum, or a string that we might use as part of a sentence. But one special thing about variables is that their contained values can change. Let's look at a simple example:</p>
+          <code><pre>
+            &lt;button&gt;Press Me&lt;/button&gt;
+          </pre></code>
+          <code><pre>
+            const button = document.querySelector('button');
+              button.onclick = function() {
+                let name = prompt('What is your name?');
+                alert('Hello ' + name + ', nice to see you!');
+              }</pre></code>
+          <p>In this example pressing the button runs a couple of lines of code. The first line pops a box up on the screen that asks the reader to enter their name, and then stores the value in a variable. The second line displays a welcome message that includes their name, taken from the variable value.</p>
+          <p>To understand why this is so useful, let's think about how we'd write this example without using a variable. It would end up looking something like this:</p>
+          <code><pre>
+            var name = prompt('What is your name?');
+
+              if (name === 'Adam') {
+                alert('Hello Adam, nice to see you!');
+              } else if (name === 'Alan') {
+                alert('Hello Alan, nice to see you!');
+              } else if (name === 'Bella') {
+                alert('Hello Bella, nice to see you!');
+              } else if (name === 'Bianca') {
+                alert('Hello Bianca, nice to see you!');
+              } else if (name === 'Chris') {
+                alert('Hello Chris, nice to see you!');
+              }
+              
+              // ... and so on ...</pre></code>
+          <p>You may not fully understand the syntax we are using (yet!), but you should be able to get the idea — if we didn't have variables available, we'd have to implement a giant code block that checked what the entered name was, and then display the appropriate message for that name. This is obviously really inefficient (the code is a lot bigger, even for only five choices), and it just wouldn't work — you couldn't possibly store all possible choices.</p>
+          <p>Variables just make sense, and as you learn more about JavaScript they will start to become second nature.</p>
+          <p>Another special thing about variables is that they can contain just about anything — not just strings and numbers. Variables can also contain complex data and even entire functions to do amazing things. You'll learn more about this as you go along.</p>
+        </article>
       </section>
-      <section class="main-section">
-        <header>
-          <article>
-            <p></p>
-          </article>
-        </header>
+
+      <section id="Basic_Math" class="main-section">
+        <header>Basic Math</header>
+        <article>
+          <p>Okay, maybe not. Some of us like math, some of us have hated math ever since we had to learn multiplication tables and long division in school, and some of us sit somewhere in between the two. But none of us can deny that math is a fundamental part of life that we can't get very far without. This is especially true when we are learning to program JavaScript (or any other language for that matter) — so much of what we do relies on processing numerical data, calculating new values, etc. that you won't be surprised to learn that JavaScript has a full-featured set of math functions available.</p>
+          <p>This article discusses only the basic parts that you need to know now.</p>
+          <h2>Types of Numbers</h2>
+          <p>In programming, even the humble decimal number system that we all know so well is more complicated than you might think. We use different terms to describe different types of decimal numbers, for example:</p>
+          <ul>
+            <li>Integers are whole numbers, e.g. 10, 400, or -5.</li>
+            <li>Floating point numbers (floats) have decimal points and decimal places, for example 12.5, and 56.7786543.</li>
+            <li>Doubles are a specific type of floating point number that have greater precision than standard floating point numbers (meaning that they are accurate to a greater number of decimal places).</li>
+          </ul>
+          <p>We even have different types of number systems! Decimal is base 10 (meaning it uses 0–9 in each column), but we also have things like:</p>
+          <ul>
+            <li>Binary — The lowest level language of computers; 0s and 1s.</li>
+            <li>Octal — Base 8, uses 0–7 in each column.</li>
+            <li>Hexadecimal — Base 16, uses 0–9 and then a–f in each column. You may have encountered these numbers before when setting colors in CSS.</li>
+          </ul>
+          <p>Before you start to get worried about your brain melting, stop right there! For a start, we are just going to stick to decimal numbers throughout this course; you'll rarely come across a need to start thinking about other types, if ever. The second bit of good news is that unlike some other programming languages, JavaScript only has one data type for numbers, you guessed it, Number. This means that whatever type of numbers you are dealing with in JavaScript, you handle them in exactly the same way.</p>
+        </article>
       </section>
-      <section class="main-section">
-        <header>
-          <article>
-            <p></p>
-          </article>
-        </header>
+
+      <section id="Strings" class="main-section">
+        <header>Strings</header>
+        <article>
+          <p>Words are very important to humans — they are a large part of how we communicate. Since the Web is a largely text-based medium designed to allow humans to communicate and share information, it is useful for us to have control over the words that appear on it. HTML provides structure and meaning to our text, CSS allows us to precisely style it, and JavaScript contains a number of features for manipulating strings, creating custom welcome messages and prompts, showing the right text labels when needed, sorting terms into the desired order, and much more. Pretty much all of the programs we've shown you so far in the course have involved some string manipulation.</p>
+          <p>Strings are dealt with similarly to numbers at first glance, but when you dig deeper you'll start to see some notable differences. Let's start by entering some basic lines into a console to familiarize ourselves.</p>
+          <p>Creating a String:</p>
+          <ol>
+            <li>To start with, enter the following lines:
+              <code><pre>
+                var string = 'The revolution will not be televised.';
+                string;
+              </pre></code>
+              <p>Just like we did with numbers, we are declaring a variable, initializing it with a string value, and then returning the value. The only difference here is that when writing a string, you need to surround the value with quotes.</p>
+            </li>
+            <li>If you don't do this, or miss one of the quotes, you'll get an error. Try entering the following lines:
+              <code><pre>
+                var badString = This is a test;
+                var badString = 'This is a test;
+                var badString = This is a test';</pre></code>
+              <p>These lines don't work because any text without quotes around it is assumed to be a variable name, property name, a reserved word, or similar. If the browser can't find it, then an error is raised (e.g. "missing; before statement"). If the browser can see where a string starts, but can't find the end of the string, as indicated by the 2nd quote, it complains with an error (with "unterminated string literal"). If your program is raising such errors, then go back and check all your strings to make sure you have no missing quote marks.</p>
+            </li>
+            <li>The following will work if you previously defined the variable string — try it now:
+              <code><pre>
+                var badString = string;
+                badString;</pre></code>
+              <p>badString is now set to have the same value as string.</p>
+            </li>
+          </ol>
+
+        </article>
       </section>
-      <section class="main-section">
-        <header>
-          <article>
-            <p></p>
-          </article>
-        </header>
+
+      <section id="String_Methods" class="main-section">
+        <header>String Methods</header>
+        <article>
+          <p>Now that we've looked at the very basics of strings, let's move up a gear and start thinking about what useful operations we can do on strings with built-in methods, such as finding the length of a text string, joining and splitting strings, substituting one character in a string for another, and more.</p>
+          <p>We've said it before, and we'll say it again — everything is an object in JavaScript. When you create a string, for example by using</p>
+          <code><pre>
+            var string = 'This is my string';
+          </pre></code>
+          <p>your variable becomes a string object instance, and as a result has a large number of properties and methods available to it. You can see this if you go to the String object page and look down the list on the side of the page! Now, before your brain starts melting, don't worry! You really don't need to know about most of these early on in your learning journey. But there are a few that you'll potentially use quite often that we'll look at here. </p>
+          <h2>Finding the Length of a string</h2>
+          <p>This is easy — you simply use the length property. Try entering the following lines:</p>
+          <code><pre>
+              var browserType = 'mozilla';
+              browserType.length;
+          </pre></code>
+          <p>This should return the number 7, because "mozilla" is 7 characters long. This is useful for many reasons; for example, you might want to find the lengths of a series of names so you can display them in order of length, or let a user know that a username they have entered into a form field is too long if it is over a certain length.</p>
+          <p>On a related note, you can return any character inside a string by using square bracket notation — this means you include square brackets ([]) on the end of your variable name. Inside the square brackets you include the number of the character you want to return, so for example to retrieve the first letter you'd do this:</p>
+          <code><pre>
+              browserType[0];
+          </pre></code>
+          <p>Computers count from 0, not 1! To retrieve the last character of any string, we could use the following line, combining this technique with the length property we looked at above:</p>
+          <code><pre>
+              browserType[browserType.length-1];
+          </pre></code>
+          <p>The length of "mozilla" is 7, but because the count starts at 0, the character position is 6, hence us needing length-1. You could use this to, for example, find the first letter of a series of strings and order them alphabetically.</p>
+        </article>
       </section>
-      <section class="main-section">
-        <header>
-          <article>
-            <p></p>
-          </article>
-        </header>
+
+      <section id="Arrays" class="main-section">
+        <header>Arrays</header>
+        <article>
+          <h2>What is an Array?</h2>
+          <p>Arrays are generally described as "list-like objects"; they are basically single objects that contain multiple values stored in a list. Array objects can be stored in variables and dealt with in much the same way as any other type of value, the difference being that we can access each value inside the list individually, and do super useful and efficient things with the list, like loop through it and do the same thing to every value. Maybe we've got a series of product items and their prices stored in an array, and we want to loop through them all and print them out on an invoice, while totaling all the prices together and printing out the total price at the bottom.</p>
+          <p>If we didn't have arrays, we'd have to store every item in a separate variable, then call the code that does the printing and adding separately for each item. This would be much longer to write out, less efficient, and more error-prone. If we had 10 items to add to the invoice it would be bad enough, but what about 100 items, or 1000? We'll return to this example later on in the article.</p>
+          <h3>Creating an Array</h3>
+          <p>Arrays are constructed of square brackets, which contain a list of items separated by commas.</p>
+          <ol>
+            <li>Let's say we wanted to store a shopping list in an array — we'd do something like the following. Enter the following lines into your console:
+              <code><pre>
+              var shopping = ['bread', 'milk', 'cheese', 'hummus', 'noodles'];
+              shopping;
+              </pre></code>
+            </li>
+            <li>In this case, each item in the array is a string, but bear in mind that you can store any item in an array — string, number, object, another variable, even another array. You can also mix and match item types — they don't all have to be numbers, strings, etc. Try these:
+              <code><pre>
+              var sequence = [1, 1, 2, 3, 5, 8, 13];
+              var random = ['tree', 795, [0, 1, 2]];
+              </pre></code>
+            </li>
+            <li>Try creating a couple of arrays of your own, before you move on.</li>
+          </ol>
+          <h3>Accessing and modifying array items</h3>
+          <p>You can then access individual items in the array using bracket notation, in the same way that you accessed the letters in a string.</p>
+          <ol>
+            <li>Enter the following into your console:
+              <code><pre>
+                shopping[0];
+                // returns "bread"</pre></code>
+            </li>
+            <li>You can also modify an item in an array by simply giving a single array item a new value. Try this:
+              <code><pre>
+                shopping[0] = 'tahini';
+                shopping;
+                // shopping will now return [ "tahini", "milk", "cheese", "hummus", "noodles" ]
+              </pre></code>
+            </li>
+            <li>Note that an array inside an array is called a multidimensional array. You can access an item inside an array that is itself inside another array by chaining two sets of square brackets together. For example, to access one of the items inside the array that is the third item inside the random array (see previous section), we could do something like this:
+              <code><pre>
+                random[2][2];
+              </pre></code>
+            </li>
+            <li>Try making some more modifications to your array examples before moving on. Have a play, and see what works and what doesn't.</li>
+          </ol>
+        </article>
       </section>
-      <section class="main-section">
-        <header>
-          <article>
-            <p></p>
-          </article>
-        </header>
+
+      <section id="Conditionals" class="main-section">
+        <header>Conditionals</header>
+        <article>
+          <p>In any programming language, the code needs to make decisions and carry out actions accordingly depending on different inputs. For example, in a game, if the player's number of lives is 0, then it's game over. In a weather app, if it is being looked at in the morning, show a sunrise graphic; show stars and a moon if it is nighttime. In this article, we'll explore how so-called conditional statements work in JavaScript.</p>
+          <p>Human beings (and other animals) make decisions all the time that affect their lives, from small ("should I eat one cookie or two?") to large ("should I stay in my home country and work on my father's farm, or should I move to America and study astrophysics?")</p>
+          <p>Conditional statements allow us to represent such decision making in JavaScript, from the choice that must be made (e.g. "one cookie or two"), to the resulting outcome of those choices (perhaps the outcome of "ate one cookie" might be "still felt hungry", and the outcome of "ate two cookies" might be "felt full up, but mom scolded me for eating all the cookies".)</p>
+          <h2>if...else statements</h2>
+          <p>Let's look at by far the most common type of conditional statement you'll use in JavaScript — the humble if ... else statement.</p>
+          <p>Basic if...else syntax looks like so in pseudocode:</p>
+          <code><pre>
+              if (condition) {
+                code to run if condition is true
+              } else {
+                run some other code instead
+              }
+          </pre></code>
+          <p>Here we've got:</p>
+          <ol>
+            <li>The keyword if followed by some parentheses.</li>
+            <li>A condition to test, placed inside the parentheses (typically "is this value bigger than this other value", or "does this value exist"). This condition will make use of the comparison operators we discussed in the last module and will return true or false.</li>
+            <li>A set of curly braces, inside which we have some code — this can be any code we like, and will only be run if the condition returns true.</li>
+            <li>The keyword else.</li>
+            <li>Another set of curly braces, inside which we have some more code — this can be any code we like, and will only be run if the condition is not true.</li>
+          </ol>
+          <p>This code is pretty human-readable — it is saying "if the condition returns true, run code A, else run code B"</p>
+          <p>You should note that you don't have to include the else and the second curly brace block — the following is also perfectly legal code:</p>
+          <code><pre>
+              if (condition) {
+                code to run if condition is true
+              }
+              
+              run some other code
+          </pre></code>
+          <p>However, you need to be careful here — in this case, the second block of code is not controlled by the conditional statement, so it will always run, regardless of whether the condition returns true or false. This is not necessarily a bad thing, but it might not be what you want — often you will want to run one block of code or the other, not both.</p>
+          <p>As a final point, you may sometimes see if...else statements written without the curly braces, in the following shorthand style:</p>
+          <code><pre>
+              if (condition) code to run if condition is true
+              else run some other code instead
+          </pre></code>
+          <p>This is perfectly valid code, but using it is not recommended — it is much easier to read the code and work out what is going on if you use the curly braces to delimit the blocks of code, and use multiple lines and indentation.</p>
+        </article>
       </section>
-      <section class="main-section">
-        <header>
-          <article>
-            <p></p>
-          </article>
-        </header>
+
+      <section id="Loop" class="main-section">
+        <header>Loop</header>
+        <article>
+          <p>Loops, loops, loops. As well as being associated with popular breakfast cereals, roller coasters and musical production, they are also a critical concept in programming. Programming loops are all to do with doing the same thing over and over again — which is termed iteration in programming speak.</p>
+          <p>Let's consider the case of a farmer that is making sure he has enough food to feed his family for the week. He might use the following loop to achieve this:</p>
+          <img src="https://mdn.mozillademos.org/files/13755/loop_js-02-farm.png">
+          <p>A loop usually has one or more of the following features:</p>
+          <ul>
+            <li>A counter, which is initialized with a certain value — this is the starting point of the loop ("Start: I have no food", above).</li>
+            <li>An exit condition, which is the criteria under which the loop stops — usually the counter reaching a certain value. This is illustrated by "Have I got enough food?", above. Let's say he needs 10 portions of food to feed his family.</li>
+            <li>An iterator, which generally increments the counter by a small amount on each successive loop, until it reaches the exit condition. We haven't explicitly illustrated this above, but we could think about the farmer being able to collect say 2 portions of food per hour. After each hour, the amount of food he has collected is incremented by two, and he checks whether he has enough food. If he has reached 10 portions (the exit condition), he can stop collecting and go home.</li>
+          </ul>
+          <p>In pseudocode, this would look something like the following:</p>
+          <code><pre>
+              loop(food = 0; foodNeeded = 10) {
+                if (food >= foodNeeded) {
+                  exit loop;
+                  // We have enough food; let's go home
+                } else {
+                  food += 2; // Spend an hour collecting 2 more food
+                  // loop will then run again
+                }
+              }
+          </pre></code>
+          <p>So the amount of food needed is set at 10, and the amount the farmer currently has is set at 0. In each iteration of the loop we check whether the amount of food the farmer has is larger or equal to the amount he needs. If so, we can exit the loop. If not, the farmer spends an hour collecting two portions of food, and the loop runs again.</p>
+          <p>At this point you probably understand the high level concepts behind loops, but you are probably thinking "OK, great, but how does this help me write better JavaScript code?" As we said earlier, loops are all to do with doing the same thing over and over again, which is great for rapidly completing repetitive tasks.</p>
+          <p>Often, the code will be slightly different on each successive iteration of the loop, which means that you can complete a whole load of tasks that are similar but slightly different — if you've got a lot of different calculations to do, you want to do each different one, not the same one over and over again!</p>
+        </article>
       </section>
-    </main>  
+
+      <section id="Reference" class="main-section">
+        <header>Reference</header>
+        <article>
+          <p>Everything from these pages were from the amazing Mozilla Documentation. <a href="https://developer.mozilla.org/en-US/">Take a look at their full articles.</a></p>
+        </article>
+      </section>
+    
+    </main>
+
   </body>
 </html>
