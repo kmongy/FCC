@@ -11,6 +11,9 @@ a {
   text-decoration: none;
   color: rgb(56, 56, 56);
 }
+ol, li {
+  margin: .3em;
+}
 .nav-link li:hover {
   background-color: goldenrod;
 }
@@ -55,6 +58,13 @@ h2 {
 code pre {
   background-color: rgb(235, 233, 233);
   padding: 1em;
+}
+#Loop .img-container {
+  margin: 0 auto;
+  width: 80%;
+}
+#Loop .img-container img {
+  width: 100%;
 }
 #Reference a {
   text-decoration: underline;
