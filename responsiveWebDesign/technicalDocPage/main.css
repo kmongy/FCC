@@ -72,3 +72,8 @@ code pre {
 #Reference a:hover {
   background-color: goldenrod;
 }
+@media (max-width: 700px) {
+  #navbar {
+    position: absolute;
+  }
+}
