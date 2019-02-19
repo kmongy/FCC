@@ -19,15 +19,14 @@ ol, li {
 }
 body {
   display: grid;
-  grid-template-columns: 340px 1fr;
+  grid-template-columns: auto 1fr;
   grid-template-rows: 1fr;
-  grid-gap: 2em;
+  grid-gap: 1em;
 }
 h2 {
   font-size: 1.1em;
 }
 #navbar {
-  position: fixed;
   line-height: 1.5;
   padding: 1.3em;
 }
