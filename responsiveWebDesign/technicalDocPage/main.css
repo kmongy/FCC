@@ -44,9 +44,8 @@ h2 {
 #navbar li:nth-of-type(1) {
   border-bottom: 1px solid grey;
 }
-.main-section {
-  margin: 0 4em;
-  padding: 2em;
+#main-doc {
+  padding: 1em;
 }
 .main-section .header-lead {
   border-bottom: 1px solid grey;
