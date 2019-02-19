@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900');
+html {
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
