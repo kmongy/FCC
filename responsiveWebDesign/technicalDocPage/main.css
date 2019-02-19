@@ -20,10 +20,16 @@ ol, li {
 h2 {
   font-size: 1.1em;
 }
+body {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 1em;
+  height: 100vh;
+  width: 60%;
+}
 #navbar {
   line-height: 1.5;
   padding: 1.3em;
-  height: 100vh;
   position: fixed;
 }
 #navbar .nav-header-lead {
@@ -42,9 +48,10 @@ h2 {
   border-bottom: 1px solid grey;
 }
 #main-doc {
-  margin-left: 400px;
+  display: grid;
+  margin-left: 20em;
+  width: 50%;
   padding: 1em;
-  position: absolute;
 }
 .main-section .header-lead {
   border-bottom: 1px solid grey;
