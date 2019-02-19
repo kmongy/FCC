@@ -17,18 +17,14 @@ ol, li {
 .nav-link li:hover {
   background-color: goldenrod;
 }
-body {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: 1fr;
-  grid-gap: 1em;
-}
 h2 {
   font-size: 1.1em;
 }
 #navbar {
   line-height: 1.5;
   padding: 1.3em;
+  height: 100vh;
+  position: fixed;
 }
 #navbar .nav-header-lead {
   font-size: 2em;
@@ -40,12 +36,15 @@ h2 {
 }
 #navbar li {
   padding: 1em;
+  position: relative;
 }
 #navbar li:nth-of-type(1) {
   border-bottom: 1px solid grey;
 }
 #main-doc {
+  margin-left: 400px;
   padding: 1em;
+  position: absolute;
 }
 .main-section .header-lead {
   border-bottom: 1px solid grey;
