@@ -2,9 +2,37 @@
 html {
   box-sizing: border-box;
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
 }
 *, *:before, *:after {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+}
+#title {
+  font-size: 3em;
+  text-align: center;
+  margin: .5em;
+}
+#img-div {
+  max-width: 90%;
+  margin: 0 auto;
+}
+#img-div #image {
+  max-width: 100%;
+}
+#tribute-info {
+  padding: 3em;
+}
+#tribute-info blockquote {
+  font-size: 2em;
+  font-style: italic;
+  margin: 2em;
+}
+footer {
+  text-align: center;
+}
+footer img {
+  width: 20%;
+  text-align: center;
 }
