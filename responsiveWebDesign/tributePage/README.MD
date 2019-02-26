@@ -20,6 +20,6 @@ Here is my tribute page to Bruce Lee to fufill the Free Code Camp Responsive Des
 
 - [x] User Story #7: I should see an a element with a corresponding id="tribute-link", which links to an outside site that contains additional information about the subject of the tribute page. HINT: You must give your element an attribute of target and set it to _blank in order for your link to open in a new tab (i.e. target="_blank").
 
-- [ ] User Story #8: The img element should responsively resize, relative to the width of its parent element, without exceeding its original size.
+- [x] User Story #8: The img element should responsively resize, relative to the width of its parent element, without exceeding its original size.
 
-- [ ] User Story #9: The img element should be centered within its parent element.
+- [x] User Story #9: The img element should be centered within its parent element.
