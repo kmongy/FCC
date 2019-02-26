@@ -2,6 +2,7 @@
 html {
   box-sizing: border-box;
   font-family: 'Source Serif Pro', serif;
+  font-size: 20px;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -19,14 +20,14 @@ a {
   color: whitesmoke;
 }
 .hero {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 .hero::before {
   content: "";
   background: url("https://images.unsplash.com/photo-1505562130589-9879683e72da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80");
   background-size: cover;
-  opacity: .85;
+  opacity: .90;
   top: 0;
   left: 0;
   bottom: 0;
@@ -47,11 +48,34 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 70%;
+  height: 60%;
   color: whitesmoke;
   text-shadow: 2px 2px 2px black;
 }
 #welcome-section h1 {
   font-size: 4em;
   font-weight: 900;
+}
+#about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3em;
+  padding: 3em;
+}
+#about .picture img{
+  max-width: 600px;
+}
+.fcc-projects-header {
+  text-align: center;
+  margin: 2em;
+}
+#projects {
+  display: flex;
+  justify-content: space-around;
+}
+footer {
+  background-color: lightgrey;
+  margin-top: 3em;
+  padding: 3em;
 }
