@@ -74,8 +74,21 @@ a {
   display: flex;
   justify-content: space-around;
 }
+#contact h2 {
+  text-align: center;
+  margin-top: 3em;
+}
+#contact ul {
+  display: flex;
+  justify-content: space-around;
+  margin: 2em;
+}
+#contact a {
+  color: black;
+}
 footer {
   background-color: lightgrey;
   margin-top: 3em;
   padding: 3em;
+  text-align: center;
 }
