@@ -35,13 +35,27 @@ a {
   position: absolute;
   z-index: -1;
 }
-#navbar ul{
-  display: flex;
-  justify-content: space-around;
+#navbar {
+  background-color: whitesmoke;
+  font-size: 1.2em;
+  box-shadow: 2px 5px 5px 2px black;
+  width: 50%;
+  left: 63%;
+  margin-left: -37.5%;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+#navbar a {
+  display: inline-block;
+  color: black;
+  text-shadow: none;
+  margin: .5em;
   padding: 1em;
-  color: whitesmoke;
-  font-size: 1.4em;
-  text-shadow: 2px 2px 2px black;
+}
+#navbar a:hover {
+  text-decoration: underline;
 }
 #welcome-section {
   display: flex;
@@ -91,4 +105,10 @@ footer {
   margin-top: 3em;
   padding: 3em;
   text-align: center;
+}
+@media (max-height: 200px) {
+  #navbar a {
+    margin: 0;
+    padding: 0;
+  }
 }
