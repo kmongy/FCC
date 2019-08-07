@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,900');
 html {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -24,10 +24,10 @@ h2 {
   font-size: 3em;
 }
 .header-top {
- display: flex;
- justify-content: space-between;
- align-items: center;
- border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 #header-logo {
   height: 100%;
@@ -41,7 +41,7 @@ h2 {
   font-weight: 900;
 }
 #header-cart button {
-  border: 1px solid grey;
+  border: 0;
   border-radius: 28px;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
   background: #fff;
@@ -52,6 +52,7 @@ h2 {
   text-transform: uppercase;
   width: 8.5em;
   cursor: pointer;
+  outline: none;
 }
 #nav-bar {
   display: flex;
@@ -60,7 +61,7 @@ h2 {
 #nav-bar ul {
   display: flex;
   width: 55%;
-  margin: 2.7em;
+  padding: 2.7em;
 }
 #nav-bar li {
   display: flex;
@@ -100,7 +101,7 @@ h2 {
 }
 #hero button {
   align-self: start;
-  border: 1px solid grey;
+  border: 0;
   border-radius: 28px;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
   background: #fff;
@@ -112,6 +113,7 @@ h2 {
   width: 20em;
   height: 6em;
   cursor: pointer;
+  outline: none;
 }
 #hero button:hover,
 #header-cart button:hover {
@@ -133,6 +135,8 @@ h2 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
+  align-content: center;
+  padding: 0 2em;
   margin-bottom: 2em;
 }
 .featured-img {
@@ -168,6 +172,7 @@ h2 {
   align-items: center;
   height: 300px;
   margin: 8em;
+  text-align: center;
 }
 .form-container .email-message {
   font-size: 3em;
@@ -204,7 +209,41 @@ h2 {
   justify-content: space-around;
   margin: 1.5em;
 }
-@media (max-width: 1450px) {
+@media screen and (min-width: 360px) and (max-width: 420px) {
+  #header-logo {
+    font-size: .6em;
+  }
+  #header-cart button {
+    width: 60%;
+    text-align: center;
+    font-size: .6em;
+  }
+  #nav-bar ul {
+    width: 100%;
+    padding: 1em;
+  }
+  #hero,
+  #featured-guitars .featured,
+  #featured-gear .featured {
+    grid-template-columns: auto;
+  }
+  #hero .hero-name-container {
+    padding: 1em;
+  }
+  #hero .hero-name-container button {
+    align-self: center;
+    justify-self: center;
+  }
+  #hero h1 {
+    font-size: 3em;
+  }
+  h2 {
+    margin: 1em;
+    padding: 1em;
+    font-size: 2em;
+  }
+}
+@media screen and (min-width: 1450px) {
   #hero h1 {
     font-size: 4em;
   }
