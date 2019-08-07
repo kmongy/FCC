@@ -226,6 +226,9 @@ h2 {
     width: 100%;
     padding: 1em;
   }
+  #nav-bar li {
+    justify-content: center;
+  }
   #hero,
   #featured-guitars .featured,
   #featured-gear .featured {
